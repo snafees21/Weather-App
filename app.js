@@ -1,13 +1,14 @@
 
 
 window.addEventListener('load', ()=>{ //after page loads, this function will run
-    let long; //longitude
-    let lat; //lattitude
+    let long, lat, today, date, time, suffix, hours, twelveHrTime;
     let temperatureDescription = document.querySelector('.temperature-description');
     let temperatureDegree = document.querySelector('.temperature-degree');
     let locationTimezone = document.querySelector('.location-timezone');
-    let temperatureSection  = document.querySelector('.temperature');
+    let temperatureSection  = document.querySelector('.temperature');    
+    let dateTime = document.querySelector('.currentdateandtime');
     const temperatureSpan = document.querySelector('.temperature span');
+    
 
 
     if(navigator.geolocation){ //if this location exists, get exact position of the user
@@ -47,11 +48,19 @@ window.addEventListener('load', ()=>{ //after page loads, this function will run
                     }
                 });
 
-            });
-             
-        });
+                //time
+                today = new Date();
+                date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
+                
+               // time = today.getHours() + ":" + today.getMinutes();               
+                twelveHrTime= today.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
 
-    
+                dateTime = date +' '+ twelveHrTime;
+                document.getElementById("currentdateandtime").innerHTML = dateTime;    
+                
+                    
+            });
+        });
     }
 
     function setIcons(icon,iconID){
