@@ -10,7 +10,7 @@ body{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
+    background: linear-gradient(rgb(14, 18, 73), rgb(44, 67, 201));
     font-family: sans-serif;
     color: white;
 }
@@ -45,3 +45,4 @@ body{
     font-size: 40 px;
 
 }
+
